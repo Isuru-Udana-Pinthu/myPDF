@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-PDF Reader | Premium PDF Viewer</title>
+    <meta name="description" content="A simple yet powerful and elegant PDF reader built with PDF.js.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Control Bar -->
+        <header class="glass-header">
+            <div class="logo">
+                <i class="fas fa-file-pdf"></i>
+                <span>G-PDF</span>
+            </div>
+            
+            <div class="controls-group">
+                <button id="prev-page" class="btn-icon" title="Previous Page">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="page-info">
+                    <input type="number" id="current-page" value="1" min="1">
+                    <span>/</span>
+                    <span id="page-count">0</span>
+                </div>
+                <button id="next-page" class="btn-icon" title="Next Page">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="controls-group divider">
+                <button id="zoom-out" class="btn-icon" title="Zoom Out">
+                    <i class="fas fa-search-minus"></i>
+                </button>
+                <span id="zoom-level">100%</span>
+                <button id="zoom-in" class="btn-icon" title="Zoom In">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+            </div>
+
+            <!-- Read-only mode: Actions removed -->
+
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="viewer-container" id="viewer-container">
+            <div id="loading-spinner" class="spinner-overlay hidden">
+                <div class="spinner"></div>
+                <p>Rendering Document...</p>
+            </div>
+            
+            <div id="pdf-render-area" class="canvas-wrapper">
+                <!-- Canvases will be dynamically added here for scrolling effect -->
+            </div>
+        </main>
+
+        <!-- Status Bar -->
+        <footer class="status-bar">
+            <span id="file-name">PDP Template.pdf</span>
+            <span id="status-message">Ready</span>
+        </footer>
+    </div>
+
+    <!-- PDF.js Integration -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
